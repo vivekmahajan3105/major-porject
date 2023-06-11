@@ -19,7 +19,7 @@ if uploaded_file is not None:
 
     #  fetch unique users
     user_list = df['user'].unique().tolist()
-    #user_list.remove('group_notification')
+    user_list.remove('group_notification')
     user_list.sort()
     user_list.insert(0, 'Overall')
 
@@ -150,33 +150,33 @@ if uploaded_file is not None:
             ax.pie(emoji_df[1].head(),labels=emoji_df[0].head())
             st.pyplot(fig)
     
-        import nltk
-        from nltk.sentiment.vader import SentimentIntensityAnalyzer
+#         import nltk
+#         from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
-        # import nltk
-        wordsss = helper.sentiment_analysis(selected_user,df)
+#         # import nltk
+#         wordsss = helper.sentiment_analysis(selected_user,df)
 
-        nltk.download('vader_lexicon')
+#         nltk.download('vader_lexicon')
 
-        sid = SentimentIntensityAnalyzer()
+#         sid = SentimentIntensityAnalyzer()
 
-        for_sentiment = 'a person is a person no matter how small dr seuss i teach the smallest students with the biggest enthusiasm'
+#         for_sentiment = 'a person is a person no matter how small dr seuss i teach the smallest students with the biggest enthusiasm'
 
-        # Read the chat messages from a file or user input
-        messages = st.text_area("Enter your WhatsApp chat messages", wordsss)
+#         # Read the chat messages from a file or user input
+#         messages = st.text_area("Enter your WhatsApp chat messages", wordsss)
 
-        # Perform sentiment analysis on the messages
-        sentiments = []
-        for message in messages.splitlines():
-            sentiment = TextBlob(message).sentiment.polarity
-            sentiments.append(sentiment)
-            if sentiment >= 0.05:
-                sentiments.append("positive")
-            elif sentiment <= -0.05:
-                sentiments.append("negative")
-            else:
-                sentiments.append("neutral")
+#         # Perform sentiment analysis on the messages
+#         sentiments = []
+#         for message in messages.splitlines():
+#             sentiment = TextBlob(message).sentiment.polarity
+#             sentiments.append(sentiment)
+#             if sentiment >= 0.05:
+#                 sentiments.append("positive")
+#             elif sentiment <= -0.05:
+#                 sentiments.append("negative")
+#             else:
+#                 sentiments.append("neutral")
 
-        # Display the sentiment results
-        st.write("Sentiment Results:")
-        st.write(sentiments)
+#         # Display the sentiment results
+#         st.write("Sentiment Results:")
+#         st.write(sentiments)
