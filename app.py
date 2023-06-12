@@ -121,34 +121,34 @@ if uploaded_file is not None:
                 st.pyplot(figg)
 
         # Wordcloud
-        st.title('Wordcloud')
-        df_wc = helper.create_wordcloud(selected_user,df)
-        fig, ax = plt.subplots()
-        ax.imshow(df_wc)
-        st.pyplot(fig)
+#         st.title('Wordcloud')
+#         df_wc = helper.create_wordcloud(selected_user,df)
+#         fig, ax = plt.subplots()
+#         ax.imshow(df_wc)
+#         st.pyplot(fig)
 
-        # Most Common Words
-        st.title('Most Common Words')
-        most_common_df = helper.most_common_words(selected_user,df)
-        fig, ax = plt.subplots()
-        bars = ax.barh(most_common_df[0],most_common_df[1],color='lightseagreen')
-        ax.bar_label(bars,label_type='center',color='#FDFFF6', fontsize=7)
-        plt.xticks(rotation='vertical')
-        st.pyplot(fig)
+#         # Most Common Words
+#         st.title('Most Common Words')
+#         most_common_df = helper.most_common_words(selected_user,df)
+#         fig, ax = plt.subplots()
+#         bars = ax.barh(most_common_df[0],most_common_df[1],color='lightseagreen')
+#         ax.bar_label(bars,label_type='center',color='#FDFFF6', fontsize=7)
+#         plt.xticks(rotation='vertical')
+#         st.pyplot(fig)
 
-        # Emoji Analysis
-        st.title('Emoji Analysis')
-        emoji_df = helper.emoji_helper(selected_user, df)
+#         # Emoji Analysis
+#         st.title('Emoji Analysis')
+#         emoji_df = helper.emoji_helper(selected_user, df)
 
-        col1,col2 = st.columns(2)
+#         col1,col2 = st.columns(2)
 
-        with col1:
-            st.dataframe(emoji_df)
+#         with col1:
+#             st.dataframe(emoji_df)
 
-        with col2:
-            fig, ax = plt.subplots()
-            ax.pie(emoji_df[1].head(),labels=emoji_df[0].head())
-            st.pyplot(fig)
+#         with col2:
+#             fig, ax = plt.subplots()
+#             ax.pie(emoji_df[1].head(),labels=emoji_df[0].head())
+#             st.pyplot(fig)
     
 #         import nltk
 #         from nltk.sentiment.vader import SentimentIntensityAnalyzer
