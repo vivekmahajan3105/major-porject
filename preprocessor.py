@@ -2,7 +2,7 @@ import re
 import pandas as pd
 
 def preprocessor(data):
-    pattern = r'(\d{2}/\d{2}/\d{4})\s\d{1,2} - ([\w\s]+): (.*)'
+    pattern =  '\d{1,2}/\d{1,2}/\d{2,4},\s\d{1,2}:\d{2}\s\w\w\s-\s'
     messages = re.split(pattern, data)[1:]
     dates = re.findall(pattern, data)
     df = pd.DataFrame({'user_message': messages, 'message_date': dates})  # make a dataframe of amessages and date
